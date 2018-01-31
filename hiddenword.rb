@@ -34,8 +34,15 @@ class HiddenWord
     return word_as_string
   end
 
-  def does_word_contain_letter(letter)
-
+  def does_word_contain_letter(search_letter)
+    letter_search_array = create_decrypted_array()
+    counter = 0
+    for letter in letter_search_array
+      if letter == search_letter
+        return true
+      end
+    end
+    return false
   end
 
 end

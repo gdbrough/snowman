@@ -31,15 +31,16 @@ class HiddenWordTest < MiniTest::Test
     assert_equal('*******', result)
   end
 
-  # def test_does_word_contain_letter__true
-  #   # decrypted_array = @hiddenword.create_decrypted_array()
-  #   # result = decrypted_array.does_word_contain_letter("n")
-  #   result = @hiddenword.does_word_contain_letter("n")
-  #   assert_equal(true, result)
-  # end
+  def test_does_word_contain_letter__true
+    decrypted_array = @hiddenword.create_decrypted_array()
+    result = @hiddenword.does_word_contain_letter("n")
+    assert_equal(true, result)
+  end
 
-  # def test_does_word_contain_letter__false
-  #   assert_equal("z", false)
-  # end
+  def test_does_word_contain_letter__false
+    decrypted_array = @hiddenword.create_decrypted_array()
+    result = @hiddenword.does_word_contain_letter("z")
+    assert_equal(false, result)
+  end
 
 end
