@@ -4,8 +4,6 @@ class HiddenWord
 
   def initialize(decrypted_word)
     @decrypted_word = decrypted_word
-    @decrypted_array = []
-    @encrypt_array = []
   end
 
   def get_word_length()
