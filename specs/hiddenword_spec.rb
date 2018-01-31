@@ -10,7 +10,12 @@ class HiddenWordTest < MiniTest::Test
   end
 
   def test_word_exists
-    assert_equal("snowman", @hiddenword.decrypted_word)
+    assert_equal("snowman", @hiddenword.decrypted_word())
+  end
+
+  def test_word_gets_encrypted
+    @hiddenword.encrypt_word()
+    assert_equal("*******", @hiddenword.encrypt_word())
   end
 
 end
