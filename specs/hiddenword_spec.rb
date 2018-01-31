@@ -21,9 +21,25 @@ class HiddenWordTest < MiniTest::Test
     assert_equal(["s","n","o","w","m","a","n"], @hiddenword.create_decrypted_array())
   end
 
-  # def test_word_gets_encrypted
-  #   @hiddenword.encrypt_word()
-  #   assert_equal("*******", @hiddenword.encrypt_word())
+  def test_array_gets_encrypted
+    @hiddenword.encrypt_array()
+    assert_equal(["*","*","*","*","*","*","*"], @hiddenword.encrypt_array())
+  end
+
+  def test_word_displays_as_string
+    result = @hiddenword.display_as_string(@hiddenword.encrypt_array())
+    assert_equal('*******', result)
+  end
+
+  # def test_does_word_contain_letter__true
+  #   # decrypted_array = @hiddenword.create_decrypted_array()
+  #   # result = decrypted_array.does_word_contain_letter("n")
+  #   result = @hiddenword.does_word_contain_letter("n")
+  #   assert_equal(true, result)
+  # end
+
+  # def test_does_word_contain_letter__false
+  #   assert_equal("z", false)
   # end
 
 end
