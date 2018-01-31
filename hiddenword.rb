@@ -11,8 +11,7 @@ class HiddenWord
   end
 
   def create_decrypted_array()
-    decrypted_array = @decrypted_word.split("")
-    return decrypted_array
+    return decrypted_array = @decrypted_word.split("")
   end
 
   def encrypt_array()
@@ -28,8 +27,7 @@ class HiddenWord
   end
 
   def display_as_string(array)
-    word_as_string = array.join()
-    return word_as_string
+    return word_as_string = array.join()
   end
 
   def does_word_contain_letter(search_letter)
