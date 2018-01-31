@@ -27,7 +27,8 @@ class HiddenWordTest < MiniTest::Test
   end
 
   def test_word_displays_as_string
-    result = @hiddenword.display_as_string(@hiddenword.encrypt_array())
+    array = @hiddenword.encrypt_array()
+    result = @hiddenword.display_as_string(array)
     assert_equal('*******', result)
   end
 
@@ -39,6 +40,12 @@ class HiddenWordTest < MiniTest::Test
   def test_does_word_contain_letter__false
     result = @hiddenword.does_word_contain_letter("z")
     assert_equal(false, result)
+  end
+
+  def test_letter_reveal
+    guessed_letters_array = ["n"]
+    result = @hiddenword.letter_reveal(guessed_letters_array)
+    assert_equal("*n****n", result)
   end
 
 end

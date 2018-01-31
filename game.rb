@@ -14,4 +14,21 @@ class Game
     @guessed_letters << letter
   end
 
+  def subtract_life_from_player
+    @player.lives -= 1
+  end
+
+  def player_guess(letter)
+    record_guessed_letter(letter)
+    if @hiddenword.does_word_contain_letter(letter)
+      @hiddenword.letter_reveal(@guessed_letters)
+    else
+      subtract_life_from_player()
+    end
+  end
+
+  def count_remaining_astericks(revealed_string)
+    return revealed_string.count("*")
+  end
+
 end
