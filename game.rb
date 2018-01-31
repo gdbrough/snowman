@@ -22,13 +22,28 @@ class Game
     record_guessed_letter(letter)
     if @hiddenword.does_word_contain_letter(letter)
       @hiddenword.letter_reveal(@guessed_letters)
+      # revealed_string = @hiddenword.letter_reveal(@guessed_letters)
+      # if @game.count_remaining_astericks(revealed_string) == 0
+      #   p "Game is won!"
+      # end
     else
       subtract_life_from_player()
+      if @player.lives == 0
+        p "Game Over!!!!"
+      end
     end
   end
 
   def count_remaining_astericks(revealed_string)
     return revealed_string.count("*")
+  end
+
+  def game_is_won_or_lost
+
+    revealed_string = @hiddenword.letter_reveal(@guessed_letters)
+    if @game.count_remaining_astericks(revealed_string) == 0
+      return "Game is won!"
+    end
   end
 
 end

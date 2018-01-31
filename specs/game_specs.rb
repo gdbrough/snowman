@@ -66,12 +66,23 @@ class GameTest < MiniTest::Test
     assert_equal(4, result)
   end
 
-  # def test_games_is_won
-  #   assert_equal(<no astericks in encrypted_word_array and lives > 0>)
-  # end
-  #
-  # def test_games_is_lost
-  #   assert_equal(<lives = 0>)
-  # end
+  def test_games_is_won
+    guessed_letters_array = ["n","s","w","o","m","a"]
+    revealed_string = @hiddenword.letter_reveal(guessed_letters_array)
+    result = @game.count_remaining_astericks(revealed_string)
+    assert_equal(0, result)
+  end
+
+  def test_games_is_lost
+    @game.player_guess('q')
+    @game.player_guess('e')
+    @game.player_guess('r')
+    @game.player_guess('t')
+    @game.player_guess('y')
+    @game.player_guess('u')
+    assert_equal(0, @player.lives)
+  end
+
+
 
 end
