@@ -33,7 +33,7 @@ class Game
   end
 
   def count_remaining_astericks(revealed_string)
-    return revealed_string.count("*")
+    revealed_string.count("*")
   end
 
   # def game_is_won_or_lost

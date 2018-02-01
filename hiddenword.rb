@@ -7,11 +7,11 @@ class HiddenWord
   end
 
   def get_word_length()
-    return @decrypted_word.length()
+    @decrypted_word.length()
   end
 
   def create_decrypted_array()
-    return decrypted_array = @decrypted_word.split("")
+    decrypted_array = @decrypted_word.split("")
   end
 
   def encrypt_array()
@@ -23,11 +23,11 @@ class HiddenWord
         counter += 1
       end
     end
-    return encrypted_word_array
+    encrypted_word_array
   end
 
   def display_as_string(array)
-    return word_as_string = array.join()
+    word_as_string = array.join()
   end
 
   def does_word_contain_letter(search_letter)
@@ -52,7 +52,7 @@ class HiddenWord
         end
       end
     end
-    return display_as_string(encrypted_word_array)
+    display_as_string(encrypted_word_array)
   end
 
 end
